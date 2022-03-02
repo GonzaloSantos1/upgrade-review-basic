@@ -36,7 +36,7 @@ const users = [
   },
 ];
 
-//------------- SHORT VERSION  ------------
+
 
 let count = {};
 let arr = [];
@@ -57,43 +57,3 @@ arr.forEach((o) => {
 
 console.log(count);
 
-//--------- CUENTA DE LA VIEJA ---------
-
-let counter = [];
-
-function soundCounter(arr) {
-  let wavesCount = 0;
-  let windCount = 0;
-  let firecampCount = 0;
-  let rainCount = 0;
-  let trainCount = 0;
-  let showerCount = 0;
-  for (let sounds of users) {
-    for (let favorites in sounds.favoritesSounds) {
-      if (favorites == 'waves') {
-        wavesCount++;
-      } else if (favorites == 'wind') {
-        windCount++;
-      } else if (favorites == 'firecamp') {
-        firecampCount++;
-      } else if (favorites == 'rain') {
-        rainCount++;
-      } else if (favorites == 'train') {
-        trainCount++;
-      } else if (favorites == 'shower') {
-        showerCount++;
-      }
-    }
-  }
-  counter.push({
-    waves: wavesCount,
-    wind: windCount,
-    firecamp: firecampCount,
-    rain: rainCount,
-    train: trainCount,
-    shower: showerCount,
-  });
-}
-
-soundCounter(users);
-console.log(counter);
