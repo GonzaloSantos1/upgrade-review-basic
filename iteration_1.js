@@ -21,8 +21,7 @@ let moviesCategories = [];
 
 function filterCategories(arr) {
   for (let values of arr) {
-    let categories = values.categories;
-    moviesCategories = moviesCategories.concat(categories);
+    moviesCategories = moviesCategories.concat(values.categories);
     for (i = 0; i < moviesCategories.length; i++) {
       if (
         moviesCategories.indexOf(moviesCategories[i]) !==
