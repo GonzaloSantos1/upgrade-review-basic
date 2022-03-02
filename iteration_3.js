@@ -36,6 +36,22 @@ const users = [
   },
 ];
 
+//------------- SHORT VERSION  ------------
+
+let count = {};
+let arr = [];
+
+for (let list of users) {
+  for (let musicSounds in list.favoritesSounds) {
+    arr.push(musicSounds);
+  }
+}
+arr.forEach((o) => {
+  count[o] = (count[o] || 0) + 1;
+});
+
+console.log(count);
+
 //--------- CUENTA DE LA VIEJA ---------
 
 let counter = [];
@@ -76,19 +92,3 @@ function soundCounter(arr) {
 
 soundCounter(users);
 console.log(counter);
-
-//------------- SHORT VERSION  ------------
-
-let count = {};
-let arr = [];
-
-for (let list of users) {
-  for (let musicSounds in list.favoritesSounds) {
-    arr.push(musicSounds);
-  }
-}
-arr.forEach((o) => {
-  count[o] = (count[o] || 0) + 1;
-});
-
-console.log(count);
