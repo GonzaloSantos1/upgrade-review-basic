@@ -9,9 +9,9 @@ let jugadores = [
 
 let swap = (arr, param1, param2) => {
   let savedIndex = arr.indexOf(param1);
-  let savedstr = param2;
+  let savedStr = param2;
   arr[arr.indexOf(param2)] = param1;
-  arr[savedIndex] = savedstr;
+  arr[savedIndex] = savedStr;
 };
 
 swap(jugadores, 'Fernando Muralla', 'Mesirve');
