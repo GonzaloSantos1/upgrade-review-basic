@@ -17,7 +17,6 @@ const movies = [
 
 //-------------VERSION CORTA----------------
 
-
 // 1. Creamos un nuevo array Set vacio, el cual no permite valores repetidos y los elimina automáticamente.
 // 2. Extraemos los elementos 'categorias' a través de movies.map() y los concatenamos en el array creado.
 // En cuanto introduzcamos valores repetidos a través de .concat(), Set los elimina automáticamente.
@@ -28,27 +27,26 @@ const movieCategories = [
 
 console.log(movieCategories);
 
-
-
 // ------------ VERSION LARGA --------------
 
-let moviesCategories = [];              // Creamos un array vacio donde concatenaremos los datos que queremos
+let moviesCategories = []; // Creamos un array vacio donde concatenaremos los datos que queremos
 
 function filterCategories(arr) {
-  for (let values of arr) {             // Recorremos todos los objetos del array
-    moviesCategories = moviesCategories.concat(values.categories);         // Concatenamos cada elemento dentro de la key 'categories' en nuestro array vacio.
-    for (i = 0; i < moviesCategories.length; i++) {                // Hacemos un loop dentro de nuestro nuevo array ya concatenado
+  for (let values of arr) {
+    // Recorremos todos los objetos del array
+    moviesCategories = moviesCategories.concat(values.categories); // Concatenamos cada elemento dentro de la key 'categories' en nuestro array vacio.
+    for (i = 0; i < moviesCategories.length; i++) {
+      // Hacemos un loop dentro de nuestro nuevo array ya concatenado
       if (
-        moviesCategories.indexOf(moviesCategories[i]) !== moviesCategories.lastIndexOf(moviesCategories[i])  // Si el indexOf un elemento NO coincide con su lastIndexOf, quiere decir que está repetido
+        moviesCategories.indexOf(moviesCategories[i]) !==
+        moviesCategories.lastIndexOf(moviesCategories[i]) // Si el indexOf un elemento NO coincide con su lastIndexOf, quiere decir que está repetido
       ) {
-        moviesCategories.splice([i], 1);     // Si se cumple la condición, lo eliminamos
+        moviesCategories.splice([i], 1); // Si se cumple la condición, lo eliminamos
       }
     }
   }
-  return moviesCategories;  // Devolvemos el valor al array
+  return moviesCategories; // Devolvemos el valor al array
 }
 
-filterCategories(movies);  // Llamamos a la función
+filterCategories(movies); // Llamamos a la función
 console.log(moviesCategories);
-
-
