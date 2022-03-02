@@ -25,23 +25,23 @@ const movies = [
 const movieCategories = [
   ...new Set([].concat(...movies.map((o) => o.categories))),
 ];
+
 console.log(movieCategories);
 
 
 
 // ------------ VERSION LARGA --------------
 
-let moviesCategories = [];
+let moviesCategories = [];              // Creamos un array vacio donde concatenaremos los datos que queremos
 
 function filterCategories(arr) {
-  for (let values of arr) {      // Recorremos todos los objetos del array y buscamos 'categorias'
-    moviesCategories = moviesCategories.concat(values.categories); // Concatenamos cada elemento en nuestro array vacio 'moviesCategories = []'
-    for (i = 0; i < moviesCategories.length; i++) { // Hacemos un loop dentro de nuestro nuevo array ya concatenado
+  for (let values of arr) {             // Recorremos todos los objetos del array
+    moviesCategories = moviesCategories.concat(values.categories);         // Concatenamos cada elemento dentro de la key 'categories' en nuestro array vacio.
+    for (i = 0; i < moviesCategories.length; i++) {                // Hacemos un loop dentro de nuestro nuevo array ya concatenado
       if (
-        moviesCategories.indexOf(moviesCategories[i]) !==
-        moviesCategories.lastIndexOf(moviesCategories[i])    // Si el indexOf un elemento NO coincide con su lastIndexOf, quiere decir que está repetido
+        moviesCategories.indexOf(moviesCategories[i]) !== moviesCategories.lastIndexOf(moviesCategories[i])  // Si el indexOf un elemento NO coincide con su lastIndexOf, quiere decir que está repetido
       ) {
-        moviesCategories.splice([i], 1);    // Si se cumple la condición, lo eliminamos
+        moviesCategories.splice([i], 1);     // Si se cumple la condición, lo eliminamos
       }
     }
   }
