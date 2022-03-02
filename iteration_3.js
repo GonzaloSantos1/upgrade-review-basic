@@ -42,11 +42,14 @@ let count = {};
 let arr = [];
 
 for (let list of users) {
+  // <- Recorremos todos los objetos
   for (let musicSounds in list.favoritesSounds) {
-    arr.push(musicSounds);
+    // <-- Recorremos todas las keys dentro de favoritesSounds
+    arr.push(musicSounds); // <-- Incluimos el listado en un array
   }
 }
 arr.forEach((o) => {
+  // <-- Contamos cada elemento y lo sumamos a count = {}
   count[o] = (count[o] || 0) + 1;
 });
 
