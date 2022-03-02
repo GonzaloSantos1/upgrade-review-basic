@@ -35,14 +35,14 @@ const users = [
   },
 ];
 
-let sum = 0;
-let average = 0;
+let sum = 0;     // Creamos una variable que recoja la suma de los valores de todos los volúmenes
+let count = 0;  // Creamos una variable que contabilice el número de volúmenes
 
-for (let sounds of users) {
-  for (let soundsList in sounds.favoritesSounds) {
-    sum += sounds.favoritesSounds[soundsList].volume;
-    average++;
+for (let sounds of users) {      // Recorremos todos los objetos dentro del array
+  for (let soundsList in sounds.favoritesSounds) {      // Recorremos sólo los objetos dentro de 'favoritesSounds'
+    sum += sounds.favoritesSounds[soundsList].volume;   // Sumamos cada uno de los valores de los volúmenes
+    count++;    // Sumamos 1 al contador
   }
 }
 
-console.log(sum / average);
+console.log(sum / count);
