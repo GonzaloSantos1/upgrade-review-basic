@@ -41,16 +41,16 @@ const users = [
 let count = {};
 let arr = [];
 
-//Recorremos todos los objetos
+//Recorremos todos los objetos dentro del array 'users'
 for (let list of users) {
   //Recorremos todas las keys dentro de favoritesSounds
   for (let musicSounds in list.favoritesSounds) {
-    //Incluimos el listado en un array
+    //Incluimos el listado en un array vacio -> arr = []
     arr.push(musicSounds);
   }
 }
 
-//Contamos cada elemento y lo sumamos a count = {}
+//Contamos cada elemento del array ya rellenado y lo sumamos a count = {}
 arr.forEach((o) => {
   count[o] = (count[o] || 0) + 1;
 });
